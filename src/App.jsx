@@ -1,4 +1,5 @@
 import Header from './components/Header';
+import Home from './pages/Home';
 import Items from './pages/Items';
 import Cart from './pages/Cart';
 import ErrorPage from './pages/ErrorPage';
@@ -23,18 +24,6 @@ function App() {
   const [addCart, setAddCart] = useState([]);
 
   useEffect(() => {
-    // async function getItems() {
-    //   try {
-    //     const response = await axios.get(
-    //       'https://fakestoreapi.com/products?limit=9'
-    //     );
-    //     setProducts(response.data);
-    //   } catch (error) {
-    //     console.error('Error fetching characters:', error);
-    //   }
-    // }
-
-    // getItems();
     async function getItems() {
       try {
         const response = await axios.get(
@@ -128,7 +117,8 @@ function App() {
         }}>
         <Header />
         <Routes>
-          <Route path='/' element={<Items />}></Route>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/Products' element={<Items />}></Route>
           <Route path='/Cart' element={<Cart />}></Route>
           <Route path='*' element={<ErrorPage />}></Route>
         </Routes>

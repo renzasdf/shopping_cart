@@ -7,6 +7,11 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   height: 100svh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  color: red !important; /* Change to your desired color */
 }
 
 header {

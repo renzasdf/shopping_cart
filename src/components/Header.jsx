@@ -18,7 +18,7 @@ export default function Header() {
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg navbar-dark bg-success-subtle px-3'>
+      <nav className='navbar navbar-expand-lg bg-success-subtle text-success px-3'>
         <span className='navbar-brand text-success fs-3 fw-bold'>ShopLyft</span>
 
         <button

@@ -20,46 +20,53 @@ export default function Cart() {
 
   return (
     <>
-      <div className='cart-grid-container'>
-        {addCart.map((product) => (
-          <div className='cart-list' key={product.id}>
-            <img src={product.imgURL} alt={product.title} />
-            <div className='item-info'>
-              <h1 className='item-title'>{product.title}</h1>
-              <p className='item-price'>Price: ${product.price}</p>
-              <div className='btn-container'>
-                <button
-                  onClick={() => {
-                    decreaseCartQuantity(product.id);
-                  }}
-                  className='btn'>
-                  -
-                </button>
-                <input
-                  type='text'
-                  value={product.quantity}
-                  placeholder='0'
-                  readOnly
-                />
-                <button
-                  onClick={() => {
-                    increaseCartQuantity(product.id);
-                  }}
-                  className='btn'>
-                  +
-                </button>
+      {addCart.length <= 0 ? (
+        <div className='container p-5 text-center'>
+          <p className='text-success fs-1 fw-bold'>No items in your Cart</p>
+        </div>
+      ) : (
+        <div className='cart-grid-container'>
+          {addCart.map((product) => (
+            <div className='cart-list' key={product.id}>
+              <img src={product.imgURL} alt={product.title} />
+              <div className='item-info'>
+                <h1 className='item-title'>{product.title}</h1>
+                <p className='item-price'>Price: ${product.price}</p>
+                <div className='btn-container'>
+                  <button
+                    onClick={() => {
+                      decreaseCartQuantity(product.id);
+                    }}
+                    className='btn'>
+                    -
+                  </button>
+                  <input
+                    type='text'
+                    value={product.quantity}
+                    placeholder='0'
+                    readOnly
+                  />
+                  <button
+                    onClick={() => {
+                      increaseCartQuantity(product.id);
+                    }}
+                    className='btn'>
+                    +
+                  </button>
+                </div>
+                <div className='total-price'>
+                  <b>Total:</b>
+                  <p>{(product.price * product.quantity).toFixed(2)}</p>
+                </div>
               </div>
-              <div className='total-price'>
-                <b>Total:</b>
-                <p>{(product.price * product.quantity).toFixed(2)}</p>
+              <div className='remove'>
+                <button onClick={() => removeItem(product.id)}>Remove</button>
               </div>
             </div>
-            <div className='remove'>
-              <button onClick={() => removeItem(product.id)}>Remove</button>
-            </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
+
       {addCart.length > 0 ? (
         <footer>
           <p>Total: {totalPrice.toFixed(2)}</p>

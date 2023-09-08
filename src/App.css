@@ -20,6 +20,14 @@ header {
   background-color: black;
 }
 
+.nav-item {
+  padding: 0 18px;
+}
+
+.navbar-nav {
+  margin-left: auto;
+}
+
 header > ul {
   font-size: 2rem;
   display: flex;

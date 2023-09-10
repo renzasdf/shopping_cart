@@ -214,3 +214,25 @@ footer > button:hover {
   background-color: white;
   color: black;
 }
+
+.custom-nav {
+  display: flex;
+  justify-content: flex-start;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.custom-end {
+  margin-left: auto;
+}
+
+.display {
+  display: block;
+}
+
+@media screen and (max-width: 991px) {
+  .display {
+    display: none;
+  }
+}

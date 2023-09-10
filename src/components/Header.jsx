@@ -18,37 +18,73 @@ export default function Header() {
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg bg-success-subtle text-success px-3'>
-        <span className='navbar-brand text-success fs-3 fw-bold'>ShopLyft</span>
+      <nav className='custom-nav | navbar navbar-expand-lg bg-success-subtle text-success px-4'>
+        <Link className='link link-success' to='/'>
+          <span className='navbar-brand text-success fs-3 fw-bold'>
+            ShopLyft
+          </span>
+        </Link>
 
+        <Link
+          className='custom-end | link link-success display fs-3'
+          to='/Cart'>
+          <ShoppingCartIcon style={{ fontSize: '2rem' }} />
+          {isInCart <= 0 ? (
+            <span>({0})</span>
+          ) : (
+            <span>({totalCartQuantity})</span>
+          )}
+        </Link>
         <button
-          className='navbar-toggler'
+          className='btn text-success bg-success-subtle d-lg-none custom-end'
           type='button'
-          data-bs-toggle='collapse'
-          data-bs-target='#navbarToggleExternalContent'
-          aria-controls='navbarToggleExternalContent'
-          aria-expanded='false'
-          aria-label='Toggle navigation'>
-          <span className='navbar-toggler-icon'></span>
+          data-bs-toggle='offcanvas'
+          data-bs-target='#offcanvasResponsive'
+          aria-controls='offcanvasResponsive'>
+          <ShoppingCartIcon style={{ fontSize: '2rem' }} />
+          {isInCart <= 0 ? (
+            <span>({0})</span>
+          ) : (
+            <span>({totalCartQuantity})</span>
+          )}
         </button>
 
         <div
-          className='collapse navbar-collapse'
-          id='navbarToggleExternalContent'>
-          <ul className='navbar-nav ml-auto fs-4'>
-            <li className='nav-item'>
-              <Link className='link link-success' to='/'>
-                Home
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link className='link notification-badge link-success' to='/Cart'>
-                Cart
-                <ShoppingCartIcon />
-                {isInCart && <span className='badge'>{totalCartQuantity}</span>}
-              </Link>
-            </li>
-          </ul>
+          className='offcanvas-lg offcanvas-end'
+          tabIndex='-1'
+          id='offcanvasResponsive'
+          aria-labelledby='offcanvasResponsiveLabel'>
+          <div className='offcanvas-header'>
+            {addCart.length <= 0 ? (
+              <>
+                <span className='offcanvas-title text-success fw-bold'>
+                  No items in your Cart
+                </span>
+                <button
+                  type='button'
+                  className='btn-close'
+                  data-bs-dismiss='offcanvas'
+                  data-bs-target='#offcanvasResponsive'
+                  aria-label='Close'></button>
+              </>
+            ) : (
+              <>
+                <span
+                  className='offcanvas-title text-success fw-bold'
+                  id='offcanvasResponsiveLabel'>
+                  Cart Items
+                </span>
+                <button
+                  type='button'
+                  className='btn-close'
+                  data-bs-dismiss='offcanvas'
+                  data-bs-target='#offcanvasResponsive'
+                  aria-label='Close'></button>
+
+                <div className='offcanvas-body'></div>
+              </>
+            )}
+          </div>
         </div>
       </nav>
     </>

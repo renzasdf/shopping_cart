@@ -231,8 +231,28 @@ footer > button:hover {
   display: block;
 }
 
+.custom-footer {
+  position: sticky;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+/* .canvas-display {
+} */
+
 @media screen and (max-width: 991px) {
   .display {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 991px) {
+  .canvas-display {
     display: none;
   }
 }

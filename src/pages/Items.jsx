@@ -11,7 +11,7 @@ export default function Items() {
         <div className='row'>
           {products.map((product) => (
             <div
-              className='col-lg-3 col-md-4 col-sm-12 mb-5 mt-5 '
+              className='col-lg-3 col-md-4 col-sm-6 mb-5 mt-5 '
               key={product.id}>
               <div className='card justify-content-center w-100 h-100 bg-success-subtle'>
                 <span className='fs-4 fw-bold text-success'>

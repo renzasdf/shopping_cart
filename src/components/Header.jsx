@@ -98,7 +98,7 @@ export default function Header() {
                   aria-label='Close'></button>
               </div>
 
-              <div className='offcanvas-body bg-success-subtle p-0 container'>
+              <div className='offcanvas-body bg-success-subtle p-0 container position-relative'>
                 {addCart.map((product) => {
                   return (
                     <div
@@ -147,14 +147,17 @@ export default function Header() {
                     </div>
                   );
                 })}
-                {/* <div className='custom-footer ps-1 bg-success-subtle text-success fw-bold'>
-                  <p>Total: {totalPrice.toFixed(2)}</p>
+                <div
+                  className={`custom-footer ps-1 text-success fw-bold d-flex justify-content-between bg-light ${
+                    addCart.length === 1 ? 'position-absolute' : 'sticky-bottom'
+                  }`}>
+                  <span>Total: {totalPrice.toFixed(2)}</span>
                   <button
                     className='btn fw-bold text-success'
                     onClick={checkOut}>
                     Check Out
                   </button>
-                </div> */}
+                </div>
               </div>
             </>
           )}

@@ -10,10 +10,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-.navbar-toggler .navbar-toggler-icon {
-  color: red !important; /* Change to your desired color */
-}
-
 header {
   height: 10svh;
   display: flex;
@@ -185,34 +181,11 @@ button:hover {
 
 footer {
   position: fixed;
-  display: flex;
-  flex-direction: column;
   bottom: 0;
   right: 0;
   z-index: 1000;
-  height: 150px;
-  width: 300px;
-  gap: 1rem;
-  padding: 1rem;
-  background-color: black;
-  color: white;
-  opacity: 0.7;
-}
-
-footer > p {
-  font-size: 2rem;
-}
-
-footer > button {
   width: 100%;
-  font-size: 2rem;
-  background-color: black;
-  color: white;
-}
-
-footer > button:hover {
-  background-color: white;
-  color: black;
+  height: 5%;
 }
 
 .custom-nav {
@@ -232,14 +205,15 @@ footer > button:hover {
 }
 
 .custom-footer {
-  position: sticky;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
   bottom: 0;
-  right: 0;
   z-index: 1000;
-  overflow: hidden;
+  width: 100%;
+}
+
+.btn:active {
+  border: none;
+  outline: none;
 }
 
 /* .canvas-display {

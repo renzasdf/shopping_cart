@@ -74,6 +74,14 @@ export default function Header() {
                 <span className='offcanvas-title text-success fw-bold'>
                   No items in your Cart
                 </span>
+                <Link to='/Products'>
+                  <button
+                    className='btn btn-success fs-5'
+                    data-bs-dismiss='offcanvas'
+                    data-bs-target='#offcanvasResponsive'>
+                    Shop Now
+                  </button>
+                </Link>
                 <button
                   type='button'
                   className='btn-close'

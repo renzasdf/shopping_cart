@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { useContext, useMemo } from 'react';
 import { ShopContext } from '../App';
+import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
 
 export default function Cart() {
@@ -24,6 +25,10 @@ export default function Cart() {
       {addCart.length <= 0 ? (
         <div className='container p-5 text-center'>
           <p className='text-success fs-1 fw-bold'>No items in your Cart</p>
+
+          <Link to='/Products'>
+            <button className='btn btn-success p-2 fs-3'>Shop Now</button>
+          </Link>
         </div>
       ) : (
         <div className='container d-flex flex-column bg-success p-4 mt-3'>

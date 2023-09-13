@@ -10,17 +10,6 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
-header {
-  height: 10svh;
-  display: flex;
-  position: sticky;
-  z-index: 1000;
-  top: 0;
-  justify-content: flex-end;
-  align-items: flex-end;
-  background-color: black;
-}
-
 .nav-item {
   padding: 0 18px;
 }
@@ -215,9 +204,6 @@ footer {
   border: none;
   outline: none;
 }
-
-/* .canvas-display {
-} */
 
 @media screen and (max-width: 991px) {
   .display {

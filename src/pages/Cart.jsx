@@ -56,6 +56,7 @@ export default function Cart() {
                       +
                     </button>
                     <button
+                      type='button'
                       className='btn p-0 ms-4 fs-2 text-success'
                       onClick={() => {
                         decreaseCartQuantity(product.id);
@@ -64,24 +65,6 @@ export default function Cart() {
                     </button>
                   </div>
                 </div>
-
-                {/* <div className='container p-0'>
-                  <button
-                    type='button'
-                    className='btn mr-3 fs-2 btn-lg text-success'
-                    onClick={() => {
-                      increaseCartQuantity(product.id);
-                    }}>
-                    +
-                  </button>
-                  <button
-                    className='btn mx-3 fs-2 btn-lg text-success'
-                    onClick={() => {
-                      decreaseCartQuantity(product.id);
-                    }}>
-                    -
-                  </button>
-                </div> */}
               </div>
               <div className='container d-flex justify-content-end align-items-end align-self-end'>
                 <button

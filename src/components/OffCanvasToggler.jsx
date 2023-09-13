@@ -35,6 +35,14 @@ export default function OffCanvasToggler({ isInCart, totalCartQuantity }) {
               <span className='offcanvas-title text-success fw-bold'>
                 No items in your Cart
               </span>
+              <button
+                type='button'
+                className='btn-close'
+                data-bs-dismiss='offcanvas'
+                data-bs-target='#offcanvasResponsive'
+                aria-label='Close'></button>
+            </div>
+            <div className='offcanvas-body container-fluid d-flex justify-content-center align-items-center'>
               <Link to='/Products'>
                 <button
                   className='btn btn-success fs-5'
@@ -43,12 +51,6 @@ export default function OffCanvasToggler({ isInCart, totalCartQuantity }) {
                   Shop Now
                 </button>
               </Link>
-              <button
-                type='button'
-                className='btn-close'
-                data-bs-dismiss='offcanvas'
-                data-bs-target='#offcanvasResponsive'
-                aria-label='Close'></button>
             </div>
           </>
         ) : (

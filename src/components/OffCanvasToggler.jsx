@@ -11,7 +11,7 @@ export default function OffCanvasToggler({ isInCart, totalCartQuantity }) {
   return (
     <>
       <button
-        className='btn text-success bg-success-subtle d-lg-none fs-2 custom-end'
+        className='btn text-light bg-dark d-lg-none fs-2 custom-end'
         type='button'
         data-bs-toggle='offcanvas'
         data-bs-target='#offcanvasResponsive'
@@ -32,7 +32,7 @@ export default function OffCanvasToggler({ isInCart, totalCartQuantity }) {
         {addCart.length <= 0 ? (
           <>
             <div className='offcanvas-header'>
-              <span className='offcanvas-title text-success fw-bold'>
+              <span className='offcanvas-title text-dark fw-bold'>
                 No items in your Cart
               </span>
               <button

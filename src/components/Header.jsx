@@ -19,7 +19,7 @@ export default function Header() {
   }, [addCart]);
   return (
     <>
-      <nav className='custom-nav | navbar navbar-expand-lg bg-success-subtle text-success px-4'>
+      <nav className='custom-nav | navbar navbar-expand-lg bg-dark px-4'>
         <NavLinks isInCart={isInCart} totalCartQuantity={totalCartQuantity} />
         <OffCanvasToggler
           isInCart={isInCart}

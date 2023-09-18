@@ -9,6 +9,20 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+#home {
+  height: 100svh;
+
+  background-image: url('assets/tembela-bohle1.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#title {
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(0, 0, 0, 0.7);
+}
+
 .link {
   text-decoration: none;
   color: white;

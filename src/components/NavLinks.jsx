@@ -5,12 +5,12 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 export default function NavLinks({ isInCart, totalCartQuantity }) {
   return (
     <>
-      <Link className='link link-success' to='/'>
-        <span className='navbar-brand text-success fs-2 fw-bold'>ShopLyft</span>
+      <Link className='link' to='/'>
+        <span className='navbar-brand text-light fs-2 fw-bold'>ShopLyft</span>
       </Link>
 
       <Link
-        className='custom-end display | link link-success fs-2 fw-bold'
+        className='custom-end display | link text-light fs-2 fw-bold'
         to='/Cart'>
         <ShoppingCartIcon style={{ fontSize: '2rem' }} />
         {isInCart <= 0 ? (

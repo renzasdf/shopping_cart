@@ -3,6 +3,7 @@ import { useContext, useMemo } from 'react';
 import { ShopContext } from '../App';
 import { Link } from 'react-router-dom';
 import DeleteIcon from '@mui/icons-material/Delete';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
 export default function Cart() {
   const {
@@ -24,52 +25,57 @@ export default function Cart() {
     <>
       {addCart.length <= 0 ? (
         <div className='container p-5 text-center'>
-          <p className='text-success fs-1 fw-bold'>No items in your Cart</p>
-
+          <p className='fs-1 fw-bold'>Cart is Empty</p>
+          <p className='fs-1'>
+            <ShoppingCartIcon style={{ fontSize: '40rem' }} />
+          </p>
           <Link to='/Products'>
-            <button className='btn btn-success p-2 fs-3'>Shop Now</button>
+            <button className='btn btn-dark p-2 fs-3'>Shop Now</button>
           </Link>
         </div>
       ) : (
-        <div className='container d-flex flex-column bg-success p-4 mt-3'>
+        <div className='container d-flex flex-column mt-3 align-items-center'>
           {addCart.map((product) => (
             <div
-              className='card h-25 w-100 d-flex flex-row bg-light mb-5 text-success align-items-center'
+              className='card d-flex flex-row mb-5 align-items-center'
               key={product.id}>
               <img
-                className='img-fluid h-25 w-25 rounded-start'
+                className='img-fluid w-25 rounded-start'
                 src={product.imgURL}
                 alt={product.title}
               />
               <div className='container d-flex flex-column py-5'>
                 <p className='fs-1 fw-bold'>{product.title}</p>
                 <p className='fs-3'>Price: ${product.price}</p>
-                <div className='d-flex flex-column'>
-                  <p className='fs-3'>Qty: {product.quantity}</p>
-                  <div>
-                    <button
-                      type='button'
-                      className='btn p-0 mr-4 fs-2 text-success'
-                      onClick={() => {
-                        increaseCartQuantity(product.id);
-                      }}>
-                      +
-                    </button>
-                    <button
-                      type='button'
-                      className='btn p-0 ms-4 fs-2 text-success'
-                      onClick={() => {
-                        decreaseCartQuantity(product.id);
-                      }}>
-                      -
-                    </button>
-                  </div>
+                <div className='d-flex align-items-center'>
+                  <span className='fs-3'>Quantity:</span>
+
+                  <button
+                    type='button'
+                    className='myBtn | mx-1'
+                    onClick={() => {
+                      increaseCartQuantity(product.id);
+                    }}>
+                    +
+                  </button>
+                  <input
+                    className='rounded w-25 text-center'
+                    type='text'
+                    value={product.quantity}
+                    readOnly
+                  />
+                  <button
+                    type='button'
+                    className='myBtn | mx-1'
+                    onClick={() => {
+                      decreaseCartQuantity(product.id);
+                    }}>
+                    -
+                  </button>
                 </div>
               </div>
-              <div className='container d-flex justify-content-end align-items-end align-self-end'>
-                <button
-                  className='btn text-success'
-                  onClick={() => removeItem(product.id)}>
+              <div className='container d-flex justify-content-end align-items-end align-self-start'>
+                <button className='btn' onClick={() => removeItem(product.id)}>
                   <DeleteIcon style={{ fontSize: '4rem' }} />
                 </button>
               </div>
@@ -79,12 +85,12 @@ export default function Cart() {
       )}
 
       {addCart.length > 0 ? (
-        <footer className='bg-success-subtle d-flex flex-row justify-content-end align-items-center fw-bold text-success px-2'>
+        <footer className='bg-dark d-flex flex-row justify-content-end align-items-center fw-bold px-2 p-1'>
           <span className='text-danger fs-3'>
             Total: ${totalPrice.toFixed(2)}
           </span>
           <button
-            className='btn btn-success fw-bold fs-4 ms-3'
+            className='btn btn-light fw-bold fs-4 ms-3'
             onClick={checkOut}>
             Check Out
           </button>

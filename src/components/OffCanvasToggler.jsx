@@ -33,7 +33,7 @@ export default function OffCanvasToggler({ isInCart, totalCartQuantity }) {
           <>
             <div className='offcanvas-header'>
               <span className='offcanvas-title text-dark fw-bold'>
-                No items in your Cart
+                Cart is Empty
               </span>
               <button
                 type='button'
@@ -42,10 +42,12 @@ export default function OffCanvasToggler({ isInCart, totalCartQuantity }) {
                 data-bs-target='#offcanvasResponsive'
                 aria-label='Close'></button>
             </div>
-            <div className='offcanvas-body container-fluid d-flex justify-content-center align-items-center'>
+            <div className='offcanvas-body container-fluid d-flex flex-column justify-content-center align-items-center'>
+              <ShoppingCartIcon style={{ fontSize: '20rem' }} />
+
               <Link to='/Products'>
                 <button
-                  className='btn btn-success fs-5'
+                  className='btn btn-dark fs-5'
                   data-bs-dismiss='offcanvas'
                   data-bs-target='#offcanvasResponsive'>
                   Shop Now

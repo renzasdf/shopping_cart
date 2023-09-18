@@ -60,7 +60,7 @@ export default function Cart() {
                   </button>
                   <input
                     className='rounded w-25 text-center'
-                    type='text'
+                    type='number'
                     value={product.quantity}
                     readOnly
                   />

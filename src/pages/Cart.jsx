@@ -52,28 +52,28 @@ export default function Cart() {
                 <p className='fs-3'>Price: ${product.price}</p>
                 <div className='d-flex align-items-center justify-content-center '>
                   <span className='fs-3'>Quantity:</span>
-
                   <button
                     type='button'
-                    className='myBtn | mx-1 px-2'
-                    onClick={() => {
-                      increaseCartQuantity(product.id);
-                    }}>
-                    +
-                  </button>
-                  <input
-                    className='custom-input | rounded text-center p-0'
-                    type='number'
-                    value={product.quantity}
-                    readOnly
-                  />
-                  <button
-                    type='button'
-                    className='myBtn | mx-1 px-2'
+                    className='btn | mx-1 fw-bold fs-1'
                     onClick={() => {
                       decreaseCartQuantity(product.id);
                     }}>
                     -
+                  </button>
+                  <input
+                    className='rounded text-center p-0'
+                    type='number'
+                    value={product.quantity}
+                    readOnly
+                  />
+
+                  <button
+                    type='button'
+                    className='btn | mx-1 fw-bold fs-1'
+                    onClick={() => {
+                      increaseCartQuantity(product.id);
+                    }}>
+                    +
                   </button>
                 </div>
                 <button

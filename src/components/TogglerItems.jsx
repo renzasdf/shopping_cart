@@ -68,7 +68,7 @@ export default function TogglerItems() {
                 </span>
                 <div className='container p-0 h-100 d-flex align-items-end justify-content-end'>
                   <button
-                    className='btn p-0 mb-1'
+                    className='btn p-0 mb-1 text-danger'
                     onClick={() => removeItem(product.id)}>
                     <DeleteIcon />
                   </button>

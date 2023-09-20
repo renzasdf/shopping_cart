@@ -2,7 +2,7 @@
   "name": "shopping_cart",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https:renzasdf.github.io/shopping_cart",
+  "homepage": "https://renzasdf.github.io/shopping_cart",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",

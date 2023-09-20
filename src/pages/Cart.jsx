@@ -34,51 +34,59 @@ export default function Cart() {
           </Link>
         </div>
       ) : (
-        <div className='container d-flex flex-column mt-3 align-items-center'>
+        <div className='container w-50 d-flex flex-column mt-3 align-items-center'>
+          <Link to='/Products'>
+            <button className='btn btn-dark mb-3'>Continue Shopping</button>
+          </Link>
           {addCart.map((product) => (
             <div
-              className='card d-flex flex-row mb-5 align-items-center'
+              className='card d-flex flex-row mb-2 bg-light border-rounded border-dark'
               key={product.id}>
               <img
                 className='img-fluid w-25 rounded-start'
                 src={product.imgURL}
                 alt={product.title}
               />
-              <div className='container d-flex flex-column py-5'>
+              <div className='container d-flex flex-column p-1 text-center align-items-center '>
                 <p className='fs-1 fw-bold'>{product.title}</p>
                 <p className='fs-3'>Price: ${product.price}</p>
-                <div className='d-flex align-items-center'>
+                <div className='d-flex align-items-center justify-content-center '>
                   <span className='fs-3'>Quantity:</span>
 
                   <button
                     type='button'
-                    className='myBtn | mx-1'
+                    className='myBtn | mx-1 px-2'
                     onClick={() => {
                       increaseCartQuantity(product.id);
                     }}>
                     +
                   </button>
                   <input
-                    className='rounded w-25 text-center'
+                    className='custom-input | rounded text-center p-0'
                     type='number'
                     value={product.quantity}
                     readOnly
                   />
                   <button
                     type='button'
-                    className='myBtn | mx-1'
+                    className='myBtn | mx-1 px-2'
                     onClick={() => {
                       decreaseCartQuantity(product.id);
                     }}>
                     -
                   </button>
                 </div>
+                <button
+                  className='btn align-self-end text-danger'
+                  onClick={() => removeItem(product.id)}>
+                  <DeleteIcon style={{ fontSize: '3rem' }} />
+                </button>
               </div>
-              <div className='container d-flex justify-content-end align-items-end align-self-start'>
+              {/* <div className='container d-flex justify-content-end align-items-end align-self-start'>
                 <button className='btn' onClick={() => removeItem(product.id)}>
                   <DeleteIcon style={{ fontSize: '4rem' }} />
                 </button>
-              </div>
+              </div> */}
             </div>
           ))}
         </div>

@@ -74,6 +74,10 @@ footer {
   outline: none;
 }
 
+.custom-input {
+  width: 2.5rem;
+}
+
 @media screen and (max-width: 991px) {
   .display {
     display: none;
